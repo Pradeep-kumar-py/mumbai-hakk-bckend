@@ -12,10 +12,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
+const api = [
+    "http://localhost:8080",
+    "http://localhost:8081",
+    "http://localhost:8082"
+]
 
 app.use(cors({
-    origin: true,
+    origin: api,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
