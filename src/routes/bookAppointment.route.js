@@ -5,6 +5,6 @@ const router = Router();
 
 router.route("/book-appointment").post(bookAppointment);
 router.route("/getAppointments").get(getAppointments);
-router.route("/appointments/:id/status").patch(updateAppointmentStatus);
+router.route("/:id/status").patch(updateAppointmentStatus);
 
 export default router;
