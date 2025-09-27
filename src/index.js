@@ -28,7 +28,7 @@ const api = [
 
 app.use(cors({
     origin: api,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
     credentials: true
 }));
 
