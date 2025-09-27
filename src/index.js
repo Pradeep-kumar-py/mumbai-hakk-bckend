@@ -16,7 +16,11 @@ const PORT = process.env.PORT || 3000;
 const api = [
     "http://localhost:8080",
     "http://localhost:8081",
-    "http://localhost:8082"
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://admin.sniffi.in/",
+    "https://www.sniffi.in/"
+
 ]
 
 app.use(cors({
