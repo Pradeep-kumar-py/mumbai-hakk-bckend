@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import userRoutes from './routes/user.route.js';
 import generalRoutes from './routes/general.route.js';
+import appointmentRoutes from './routes/bookAppointment.route.js';
 
 import dotenv from 'dotenv';
 import connectDB from './db/dbConnect.js';
@@ -33,6 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes for handling user-related requests
 app.use("/api/user", userRoutes);
 app.use("/api/general", generalRoutes);
+app.use("/api/appointments", appointmentRoutes)
 // app.use("/api/upload", uploadRoutes);
 // app.use("/api/book", bookRoutes);
 // app.use("/api/otp", otpRoutes);
