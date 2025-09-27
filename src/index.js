@@ -13,21 +13,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const api = [
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
+const api = isDevelopment ? [
     "http://localhost:8080",
     "http://localhost:8081",
-    "http://localhost:5173",
-    "http://localhost:5174",
+    "http://localhost:5173", 
     "http://localhost:5174",
     "http://localhost:3000",
-    "http://localhost:3001",
-    "https://admin.sniffi.in",
-    "https://www.sniffi.in/"
-
-]
+    "http://localhost:3001"
+] : [
+    "https://sniffi.in",
+    "https://www.sniffi.in", 
+    "https://admin.sniffi.in"
+];
 
 app.use(cors({
-    origin: api,
+    origin: isDevelopment ? true : api,
     methods: ["GET", "POST", "PUT", "DELETE","PATCH"],
     credentials: true
 }));

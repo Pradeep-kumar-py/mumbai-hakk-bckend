@@ -16,7 +16,6 @@ const bookAppointmentSchema = new Schema({
     },
     email:{
         type:String,
-        required:true 
     },
     phone:{
         type:String,
