@@ -21,7 +21,7 @@ const api = [
     "http://localhost:5174",
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://admin.sniffi.in/",
+    "https://admin.sniffi.in",
     "https://www.sniffi.in/"
 
 ]
@@ -56,15 +56,15 @@ app.get("/", (req, res) => {
     res.send("API is running...")
 });
 
-  
+
 
 connectDB()
-.then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error(`Error connecting to the database: ${error.message}`);
+        process.exit(1);
     });
-})
-.catch((error) => {
-    console.error(`Error connecting to the database: ${error.message}`);
-    process.exit(1);
-});
